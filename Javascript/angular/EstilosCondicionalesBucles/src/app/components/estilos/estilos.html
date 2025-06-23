@@ -1,0 +1,42 @@
+
+
+<!-- 
+Creamos un boton
+Cuando pulse el boton modificamos el color de estilosparrafo
+-->
+
+<button (click)="onCambiarColor()">Cambio color</button>
+
+<!--
+3 botones, cada uno un color
+Cuando pulse en cada uno de ellos se asigna el color de fondo correspondiente al parrafo
+tips:
+- La funcion que desarrollemos puede tener los argumentos que queramos
+-Todos los botones realizan la misma accion
+
+-->
+
+<button (click)="onCambiarFondo('red')">RED</button>
+<button (click)="onCambiarFondo('green')">GREEN</button>
+<button (click)="onCambiarFondo('purple')">PURPLE</button>
+
+<!--
+Un campo de texto.
+Lo que escriba en el campo de texto de asigna como color de texto en el  parrafo
+-->
+
+<input type="text" (input)="onInput($event)">
+
+<!--
+Un input de tipo range
+Modificamos el tamaño de la funete en funcion del valor del range
+No se puede tocar la propiedad estilos parrafo fuera de la funcion que desarrollemos
+-->
+
+<input type="range" (input)="onRange($event)" min="16" max="120">
+
+
+<button (click)="isActivo = !isActivo">Toggle Activo</button>
+
+<p [style]="estilosParrafo">estilos works!</p>
+<p [class.activo]="isActivo" [class.otra]="!isActivo">Zapaterias Paquito</p>
