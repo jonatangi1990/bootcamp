@@ -1,0 +1,14 @@
+<section>
+    @for(ser of arrSeries; track ser.id){
+    <article>
+        <h3>{{ser.title}}</h3>
+        <p>{{ser.creator}}</p>
+        <p>{{ser.rating}}</p>
+        <p>{{ser.dates}}</p>
+        <img [src]="ser.image" alt="">
+        <p>{{ser.channel}}</p>
+
+    </article>
+    }
+
+</section>

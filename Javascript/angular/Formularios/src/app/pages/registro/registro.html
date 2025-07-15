@@ -1,0 +1,85 @@
+<button (click)="onClick()">Valores por defecto</button>
+
+
+<div>
+    <p>Form VALID {{registroForm.valid}}</p>
+    <p>Form INVALID {{registroForm.invalid}}</p>
+    <p>Control Nombre Valid: {{registroForm.get('nombre')?.valid}}</p>
+    <p>Control Nombre Touched: {{registroForm.get('nombre')?.touched}}</p>
+    <p>Error required: {{registroForm.get('nombre')?.hasError('required')}}</p>
+    <p>Error required: {{registroForm.get('nombre')?.hasError('minlength')}}</p>
+</div>
+
+
+
+<div class="principal">
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Nombre: </label>
+            <input type="text" class="form-control" formControlName="nombre"> <!--con formcontrolName enlazamos el input con e
+        lo que tengamos en el .ts (tienen que tener el mismo nombre)-->
+            @if(checkError('nombre', 'required')){
+            <p class="error"> El campo nombre es obligatorio</p>
+
+            }
+            @if(checkError('nombre', 'minlength')){
+            <p class="error"> El nombre debe tener minimo 3 caracteres</p>
+
+            }
+
+            @if(checkError('nombre', 'minlength')){
+            <p class="error">
+                {{registroForm.get('nombre')?.getError('minlength').actualLength}} /
+                {{registroForm.get('nombre')?.getError('minlength').requiredLength}}
+            </p>
+            }
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Apellidos: </label>
+            <input type="text" class="form-control" formControlName="apellidos">
+
+            @if(checkError('apellidos', 'maxlength')){
+            <p class="error">El apellido debe tener 12 caracteres como maximo</p>
+            }
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Edad: </label>
+            <input type="number" class="form-control" formControlName="edad">
+
+            @if(checkError('edad', 'edadvalidator')){
+            <p class="error">TIENES QUE SER MAYOR DE EDAD Y NO JUBILADO</p>
+            }
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email: </label>
+            <input type="email" class="form-control" formControlName="email">
+            @if(checkError('email', 'required')){
+            <p class="error">El campo es obligatorio</p>
+            }
+            @if(checkError('email', 'pattern')){
+            <p class="error">EL EMAIL DEBE TENER.........</p>
+            }
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Telefono: </label>
+            <input type="tel" class="form-control" formControlName="telefono">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Dni: </label>
+            <input type="text" class="form-control" formControlName="dni">
+            @if(checkError('dni', 'dnivalidator')){
+            <p class="error">Tu dni no es valido</p>
+            }
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password: </label>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Repite Password: </label>
+            <input type="password" class="form-control" formControlName="repite_password">
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-warning" [disabled]="!registroForm.valid">
+    </form>
+
+</div>

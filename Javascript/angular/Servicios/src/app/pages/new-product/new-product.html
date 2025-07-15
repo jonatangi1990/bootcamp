@@ -1,0 +1,32 @@
+<form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+    <!-- enlazar el formulario junto al del ts y poner el evento a capturar, en este caso seria el ngsubmit -->
+
+    <!-- (.mb-3>label.form-label+input.form-control)*6 -->
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Descripcion</label>
+        <input type="text" class="form-control" formControlName="description">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Precio</label>
+        <input type="text" class="form-control" formControlName="price">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Categoria</label>
+        <input type="text" class="form-control" formControlName="category">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">imagen</label>
+        <input type="text" class="form-control" formControlName="image">
+    </div>
+    <div class="mb-3 form-check">
+        <label class="form-check-label">Active</label>
+        <input type="checkbox" class="form-check-input" formControlName="active">
+    </div>
+
+    <input type="submit" value="Enviar" class="btn btn-primary">
+
+</form>

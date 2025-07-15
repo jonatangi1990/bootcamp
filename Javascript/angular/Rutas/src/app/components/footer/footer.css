@@ -1,0 +1,9 @@
+div{
+    background-color: red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    button{
+        margin: 10px;
+    }
+}

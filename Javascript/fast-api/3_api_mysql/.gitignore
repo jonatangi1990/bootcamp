@@ -1,0 +1,2 @@
+.env
+#con este fichero no se subiria a git el fichero .env

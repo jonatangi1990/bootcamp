@@ -1,0 +1,28 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" formControlName="title">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Creator</label>
+        <input type="text" class="form-control" formControlName="creator">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Rating</label>
+        <input type="number" class="form-control" formControlName="rating">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Dates</label>
+        <input type="text" class="form-control" formControlName="dates">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="text" class="form-control" formControlName="image">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Channel</label>
+        <input type="text" class="form-control" formControlName="channel">
+    </div>
+
+    <input type="submit" value="Enviar" class="btn btn-info">
+</form>

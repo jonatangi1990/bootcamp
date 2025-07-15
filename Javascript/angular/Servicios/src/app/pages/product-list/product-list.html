@@ -1,0 +1,33 @@
+<section>
+    @for(prod of arrProductos; track prod._id){
+    <article>
+        <h3>Nombre: {{prod.name}}</h3>
+        <p>Descripcion: {{prod.description}}</p>
+        <p>Precio: {{prod.price | currency: 'EUR'}}</p>
+        <!--con el currency le pedimos que formatee el valor donde lo metamos y tiene que estar importado en el .ts-->
+        <p>Categoria: {{prod.category}}</p>
+        <img [src]="prod.image" alt="">
+        <p>Activo: {{prod.active}}</p>
+
+
+
+
+    </article>
+
+    }
+
+
+</section>
+
+
+<button [disabled]="page === totalPages" (click)="onClick(true)">Pag Anterior</button> <button [disabled]="page === 1"
+    (click)="onClick(false)">Pag
+    Posterior</button>
+
+<!--  _id:         string;
+    name:        string;
+    description: string;
+    price:       number;
+    category:    Category;
+    image:       string;
+    active:      boolean; -->

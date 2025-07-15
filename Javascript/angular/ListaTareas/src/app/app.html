@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12 col-md-4">
+            <app-task-form (tareaCreada)="onTareaCreada($event)"></app-task-form>
+        </div>
+        <div class="col-12 col-md-8 mt-4 mt-md-0">
+            <app-task-list [tareas]="arrTareas"></app-task-list>
+        </div>
+        
+    </div>
+</div>

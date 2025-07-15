@@ -1,0 +1,19 @@
+
+
+<div>
+    <div>
+        <label>Nombre</label>
+        <input type="text" [(ngModel)]="producto2.nombre">
+    </div>
+    <div>
+        <label>Precio:</label>
+        <input type="number" [(ngModel)]="producto2.precio">
+    </div>
+    <div>
+        <label>Direccion</label>
+        <input type="text" [(ngModel)]="producto2.descripcion">
+    </div>
+    <button>Guardar</button>
+</div>
+
+{{producto2 | json}}

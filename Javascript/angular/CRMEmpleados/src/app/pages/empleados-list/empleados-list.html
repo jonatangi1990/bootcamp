@@ -1,0 +1,29 @@
+<section>
+    <div class="mb-3">
+        <label class="form-label">Departamento</label>
+        <select (change)="onChange($event)" class="form-select" formControlName="departamento">
+            <option value="">Elige Departamento</option>
+            <option value="direccion">Dirección</option>
+            <option value="recursoshumanos">Recursos Humanos</option>
+            <option value="desarrollo">Desarrollo</option>
+            <option value="diseño">Diseño</option>
+        </select>
+    </div>
+    @for(emp of arrEmpleados; track emp._id){
+    <article>
+
+        <h1>Nombre: {{emp.nombre}}</h1>
+        <p>Apellidos: {{emp.apellidos}}</p>
+        <p>Email: {{emp.email}}</p>
+        <p>Telefono: {{emp.telefono}}</p>
+        <p>Departamento: {{emp.departamento}}</p>
+        <p>Salario: {{emp.salario}}</p>
+        <p>Created at: {{emp.createdAt}}</p>
+        <p>Updated at: {{emp.updatedAt}}</p>
+        <input [routerLink]="['/empleados', 'edit', emp._id]" type="submit" value="Modificar" class="btn btn-warning">
+        <input (click)="onClick(emp._id)" type="submit" value="Borrar" class="btn btn-danger">
+
+    </article>
+    }
+
+</section>

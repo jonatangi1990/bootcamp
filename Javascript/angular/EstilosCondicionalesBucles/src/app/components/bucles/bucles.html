@@ -1,0 +1,45 @@
+<div class="lista-productos">
+
+    @for(prod of productos; track $index){ <!--llamo prod a la variable ya que estoy trabajando con productos y en la parte de track se pone un identificador unico, al no tener se puede poner $index -->
+    
+        <div class="producto">
+            <h3>{{prod.nombre}}</h3>
+            <ul>
+                <li>Precio: {{prod.precio}}€</li>
+                <li>Departamento: {{prod.departamento}}</li>
+                <li>Stock: {{prod.stock}}</li>
+        
+                <!-- para realizar el bucle se pone con prod.y lo que quieras añadir ya que se pone l variable NO el array-->
+            </ul>
+        </div>
+    }
+</div>
+
+<!-- Colocar todos los productos en una tabla HTML -->
+<div class="container">
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Departamento</th>
+            <th>Stock</th>
+           
+        </tr>
+        @for(prod of productos; track $index){
+        
+            
+                
+                <tr>
+                    <td>{{prod.nombre}}: </td>
+                    <td>{{prod.precio}}€ </td>
+                    <td>{{prod.departamento}} </td>
+                    <td>{{prod.stock}} </td>
+                    
+                </tr>
+            
+            
+        }
+    </table>
+
+</div>

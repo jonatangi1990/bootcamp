@@ -1,0 +1,29 @@
+<!-- <card-contacto [contacto]="{ nombre: 'Fulanito', email:
+'fulanito@yahoo.es', telefono: '87818912', departamento: 'RRHH'}"></card-contacto> -->
+<!-- <lista-contactos [contactos]="[{ nombre: 'Fulanito', email:
+'fulanito@yahoo.es', telefono: '87818912', departamento: 'RRHH'}, {
+nombre: 'Menganito', email: 'menganito@yahoo.es', telefono: '77818912',
+departamento: 'Desarrollo'}]"></lista-contactos> -->
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12 col-md-4">
+            <formulario (contactoCreado)="onContactoCreado($event)"></formulario>
+        </div>
+        <div class="col-12 col-md-8 mt-4 mt-md-0">
+            <lista-contactos [contactos]="arrContactos"></lista-contactos>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

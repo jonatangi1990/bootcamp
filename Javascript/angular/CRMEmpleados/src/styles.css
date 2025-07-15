@@ -1,0 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Caprasimo:regular);
+
+:root{
+    --color-fondo: #ccae62; /* desde aqui me vale para cualquier pagina de la aplicacion */
+}
+
+
+h1, h2, h3, h4{
+    font-family: 'Caprasimo';
+}

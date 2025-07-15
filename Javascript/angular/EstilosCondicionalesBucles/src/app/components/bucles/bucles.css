@@ -1,0 +1,16 @@
+.producto{
+    padding: 10px;
+    border: 3px solid red;
+    background-color: aquamarine;
+    width: 300px;
+}
+h3{
+    color: blue;
+    border-bottom: 2px solid black;
+}
+.lista-productos{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}

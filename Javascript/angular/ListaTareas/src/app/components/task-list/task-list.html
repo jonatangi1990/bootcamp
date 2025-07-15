@@ -1,0 +1,13 @@
+<h2>Lista tareas</h2>
+<div class="lista">
+    @for(tar of tareas; track $index){
+    <div class="app-component">
+        <h4>Tarea: {{tar.tarea}}</h4>
+        <p>Prioridad: {{tar.prioridad}}</p>
+        <button (click)="delClick($index)">Borrar</button>
+
+    </div>
+    }@empty {
+    <h3>No hay tareas</h3>
+    }
+</div>

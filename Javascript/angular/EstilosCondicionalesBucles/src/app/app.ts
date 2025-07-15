@@ -5,15 +5,34 @@ import { Estilos } from "./components/estilos/estilos";
 import { Condicionales } from "./components/condicionales/condicionales";
 import { CardProducto } from "./components/card-producto/card-producto";
 import { IProducto } from './interfaces/IProducto';
+import { NotificadorContador } from "./components/notificador-contador/notificador-contador";
+import { FormularioProducto } from "./components/formulario-producto/formulario-producto";
+import { Bucles } from "./components/bucles/bucles";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Formulario, Estilos, Condicionales, CardProducto],
+  imports: [RouterOutlet, Formulario, Estilos, Condicionales, CardProducto, NotificadorContador, FormularioProducto, Bucles],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected title = 'EstilosCondicionalesBucles';
+
+  onMultiplo2($event: number){
+    console.log(`El multiplo de 2 es ${$event}`)
+  }
+
+  onMulti($event: number){
+    if ($event > 10){
+      console.log(`Mayor que 10: ${$event}`);
+    }else if($event === 0){
+      console.log("Reseteado a 0");
+    }else {
+      console.log(`Menor que 10: ${$event}`)
+    }
+  }
+
+  
 
   
 

@@ -1,0 +1,88 @@
+<section class="my-5">
+
+    @for (mons of arrMonsters; track mons.id) {
+    <article>
+
+
+        <h3>{{ mons.name }}</h3>
+        <div class="info">
+            <p><strong>Type:</strong> {{ mons.type }}</p>
+            <p><strong>Species:</strong> {{ mons.species }}</p>
+            <p><strong>Elements:</strong> {{ mons.elements.join(', ') }}</p>
+            <p><strong>Description:</strong> {{ mons.description }}</p>
+
+            <!-- Ailments -->
+            @if (mons.ailments.length > 0;) {
+            <div>
+                <strong>Ailments:</strong>
+                <ul>
+                    @for (ailment of mons.ailments; track ailment.id) {
+                    <li>
+                        <strong>{{ ailment.name }}</strong>: {{ ailment.description }}
+                    </li>
+                    }
+                </ul>
+            </div>
+            }
+
+            <!-- Locations -->
+            @if (mons.locations.length > 0) {
+            <div>
+                <strong>Locations:</strong>
+                <ul>
+                    @for (loc of mons.locations; track loc.id) {
+                    <li>{{ loc.name }} (Zones: {{ loc.zoneCount }})</li>
+                    }
+                </ul>
+            </div>
+            }
+
+            <!-- Resistances -->
+            @if (mons.resistances.length > 0) {
+            <div>
+                <strong>Resistances:</strong>
+                <ul>
+                    @for (res of mons.resistances; track $index) {
+                    <li>{{ res.element }} - {{ res.condition ?? 'Always' }}</li>
+                    }
+                </ul>
+            </div>
+            }
+
+            <!-- Weaknesses -->
+            @if (mons.weaknesses.length > 0) {
+            <div>
+                <strong>Weaknesses:</strong>
+                <ul>
+                    @for (weak of mons.weaknesses; track $index) {
+                    <li>{{ weak.element }}: {{ weak.stars }}★ ({{ weak.condition ?? 'Always' }})</li>
+                    }
+                </ul>
+            </div>
+            }
+
+            <!-- Rewards -->
+            @if (mons.rewards.length > 0) {
+            <div>
+                <strong>Rewards:</strong>
+                <ul>
+                    @for (reward of mons.rewards; track reward.id) {
+                    <li>
+                        <strong>{{ reward.item.name }}</strong>:
+                        <ul>
+                            @for (cond of reward.conditions; track $index) {
+                            <li>
+                                {{ cond.type }} - Rank: {{ cond.rank }} -
+                                {{ cond.quantity }}x ({{ cond.chance }}%)
+                            </li>
+                            }
+                        </ul>
+                    </li>
+                    }
+                </ul>
+            </div>
+            }
+        </div>
+    </article>
+    }
+</section>

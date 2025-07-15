@@ -1,0 +1,16 @@
+.principal{
+    background-color: aquamarine;
+    width: 100%;
+}
+
+input.ng-invalid.ng-touched{
+    border: 4px solid tomato;
+}
+
+input.ng-valid.ng-touched{
+    border: 4px solid lightgreen;
+}
+.error{
+    color: tomato;
+    font-size: .7 rem;
+}

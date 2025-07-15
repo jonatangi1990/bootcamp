@@ -1,0 +1,21 @@
+<div class="formulario">
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoContacto.nombre">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoContacto.email">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Telefono</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoContacto.telefono">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Departamento</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoContacto.departamento">
+    </div>
+    <button class="btn btn-info" (click)="onClick()">Enviar</button>
+</div>
+
+<card-contacto [contacto]="nuevoContacto"></card-contacto>

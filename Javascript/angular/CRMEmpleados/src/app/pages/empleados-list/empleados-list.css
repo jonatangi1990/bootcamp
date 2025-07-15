@@ -1,0 +1,21 @@
+section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    
+    
+
+}
+
+article{
+    border: 4px solid black;
+    margin-bottom: 5px;
+    background-color: var(--color-fondo);  /*  lo tengo asiganado en la pagina styles.css y me vale para cualquier pagina*/
+    width: 400px;
+}
+p{
+    color: #f7f1e3;
+}
